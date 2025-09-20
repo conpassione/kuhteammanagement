@@ -1,0 +1,10 @@
+# default settings, should be overwritten
+
+TCEpage:
+  author: 'kuhteammanagement'
+  author_email: info@kuhteammanagement.ch
+  author_phone: '+41790000000'
+  org_name: 'kuhteammanagement'
+  org_logo: 'EXT:kuhteammanagement/Resources/Public/Images/logo.png'
+
+# Das ist ein Test
