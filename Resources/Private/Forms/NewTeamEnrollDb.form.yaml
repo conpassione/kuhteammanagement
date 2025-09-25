@@ -1,4 +1,4 @@
-identifier: simple-messaged
+identifier: kuhnewteamenroll
 label: 'AnmeldungNeuesTeam'
 type: Form
 prototypeName: standard
@@ -15,7 +15,7 @@ finishers:
       senderName: 'Verein KIND&HUND'
       addHtmlPart: true
       attachUploads: false
-      templateName: 'Test.html'
+      templateName: 'NewTeam.html'
       templateRootPaths:
         36651: 'EXT:kuhteammanagement/Resources/Private/Emails/Templates'
       layoutRootPaths:
@@ -32,12 +32,43 @@ finishers:
       senderName: '{lastname} {firstname}'
       addHtmlPart: true
       attachUploads: false
+      templateName: 'NewTeam.html'
       templateRootPaths:
         36651: 'EXT:kuhteammanagement/Resources/Private/Emails/Templates'
       layoutRootPaths:
         36651: 'EXT:kuhteammanagement/Resources/Private/Emails/Layouts'
       partialRootPaths:
         36651: 'EXT:kuhteammanagement/Resources/Private/Emails/Partials'
+  - identifier: SaveToDatabase
+    options:
+      table: 'tx_conpassione_newteamenroll'
+      mode: insert
+      databaseColumnMappings:
+        tstamp:
+          value: '{__currentTimestamp}'
+        pid:
+#          value: '{eventpid}'
+          value: '10'
+        type:
+          value: 'kuhnewteamenroll'
+      elements:
+        lastname:
+          mapOnDatabaseColumn: 'lastname'
+        firstname:
+          mapOnDatabaseColumn: 'firstname'
+        mobile:
+          mapOnDatabaseColumn: 'mobile'
+        email:
+          mapOnDatabaseColumn: 'email'
+        message:
+          mapOnDatabaseColumn: 'message'
+        dog:
+          mapOnDatabaseColumn: 'dog'
+        breed:
+          mapOnDatabaseColumn: 'breed'
+        birthdate:
+          mapOnDatabaseColumn: 'birthdate'
+          skipIfValueIsEmpty: true
   - identifier: Confirmation
     options:
       message: 'Besten Dank für Deine Anmeldung. Du bekommst innerhalb einer Woche Antwort von uns.'
@@ -91,6 +122,29 @@ renderables:
             validators:
               - identifier: EmailAddress
               - identifier: NotEmpty
+      - identifier: gridrow-5
+        type: GridRow
+        label: 'Hund'
+        renderables:
+          - identifier: dog
+            type: Text
+            label: 'Hundename'
+            defaultValue: 'Zarin'
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+              validationErrorMessages:
+                - code: 1221559977
+                  message: 'Der Hundename ist zwingend nötig.'
+            validators:
+              - identifier: NotEmpty
+          - identifier: breed
+            type: Text
+            label: 'Rasse'
+          - identifier: birthdate
+            label: 'Geburtsdatum Hund'
+            type: Date
+            defaultValue: 0
       - identifier: sm-message
         defaultValue: ''
         type: Textarea
