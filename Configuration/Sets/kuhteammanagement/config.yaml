@@ -1,7 +1,7 @@
 name: conpassione/kuhteammanagement
 label: Test
 dependencies:
-  - conpassione/cpdevsite
+  - conpassione/kuhdist
   - typo3/form
   - typo3/redirects
   - typo3/seo-sitemap

@@ -1,5 +1,6 @@
-# Extension Documentation
+# KIND&HUND TeamManagement
 
 Die Extension wird von der [conPassione gmbh](https://www.conpassione.ch) zur Verfügung gestellt.
 
-Das ist jetzt ein zusätzlicher Test für die Integration mit github.
+Die Dokumentation findest Du im Sitepack von KIND&HUND Club Management and Web
+conpassione/kuhdist
