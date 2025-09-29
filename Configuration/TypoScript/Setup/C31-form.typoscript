@@ -5,3 +5,11 @@ plugin.tx_form {
     }
   }
 }
+
+module.tx_form {
+  settings {
+    yamlConfigurations {
+      36651 = EXT:kuhteammanagement/Configuration/Form/CpFormSetup.yaml
+    }
+  }
+}

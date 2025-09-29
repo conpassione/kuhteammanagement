@@ -1,5 +1,5 @@
 <f:layout name="KuHLayout" />
-<f:section name="Title">KuH: {title}</f:section>
+<f:section name="Title">{title}</f:section>
 <f:section name="Main">
     <table>
         <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
@@ -26,7 +26,17 @@
                                         <f:else>
                                             <table cellspacing="0" border="0">
                                                 <tr>
-                                                    <td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
+                                                    <f:if condition="{formValue.element.type} ==='Checkbox'">
+                                                        <f:then>
+                                                            <f:if condition="{formValue.processedValue} == 1">
+                                                                <f:then><td>&#10004;</td></f:then>
+                                                                <f:else><td>&#10008;</td></f:else>
+                                                            </f:if>
+                                                        </f:then>
+                                                        <f:else>
+                                                            <td><f:format.nl2br>{formValue.processedValue}</f:format.nl2br></td>
+                                                        </f:else>
+                                                    </f:if>
                                                 </tr>
                                             </table>
                                         </f:else>

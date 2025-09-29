@@ -1,38 +1,27 @@
 persistenceManager:
   allowedExtensionPaths:
-    101: 'EXT:kuhteammanagement/Resources/Private/Forms/'
+    36651: 'EXT:kuhteammanagement/Resources/Private/Forms/'
   allowSaveToExtensionPaths: false
   allowDeleteFromExtensionPaths: false
 
 prototypes:
   standard:
-    formElementsDefinition:
-      Form:
-        renderingOptions:
-#          templateRootPaths:
-#            36651: 'EXT:kuhteammanagement/Resources/Private/Frontend/Templates/'
-#          partialRootPaths:
-#            36651: 'EXT:kuhteammanagement/Resources/Private/Frontend/Partials/'
-#          layoutRootPaths:
-#            36651: 'EXT:kuhteammanagement/Resources/Private/Frontend/Layouts/'
-            translation:
-              translationFiles:
-                36651: 'EXT:kuhteammanagement/Resources/Private/Language/formelements.xlf'
-
-    formEditor:
-      translationFiles:
-        36651: 'EXT:kuhteammanagement/Resources/Private/Language/form.xlf'
-    formEngine:
-      translationFiles:
-        36651: 'EXT:kuhteammanagement/Resources/Private/Language/form.xlf'
-
-formManager:
-  translationFiles:
-    36651: 'EXT:kuhteammanagement/Resources/Private/Language/form.xlf'
-#  selectablePrototypesConfiguration:
-#    100:
-#      newFormTemplates:
-#        366502:
-#          templatePath: 'EXT:kuhteammanagement/Resources/Private/Forms/SimpleMessageForm.yaml'
-#          label: 'newFormTemplates.SimpleMessageForm.label'
-
+    finishersDefinition:
+      EmailToReceiver:
+        options:
+#          templateName: 'ReceiverForm1'
+          templateRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Templates/'
+          layoutRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Layouts/'
+          partialRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Partials/'
+      EmailToSender:
+        options:
+#          templateName: 'SenderForm1'
+          templateRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Templates/'
+          layoutRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Layouts/'
+          partialRootPaths:
+            36650: 'EXT:kuhteammanagement/Resources/Private/Emails/Partials/'
