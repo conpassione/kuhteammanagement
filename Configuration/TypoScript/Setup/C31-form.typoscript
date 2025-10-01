@@ -13,3 +13,5 @@ module.tx_form {
     }
   }
 }
+
+config.contentObjectExceptionHandler = 0

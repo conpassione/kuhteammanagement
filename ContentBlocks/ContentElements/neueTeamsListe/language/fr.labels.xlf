@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="fr" original="Labels.xlf" datatype="plaintext" product-name="conpassione/stafflist" date="2025-10-01T16:25:01+02:00">
+		<header></header>
+		<body>
+			<trans-unit id="be.description">
+				<source>Displays new Teams of pages:</source>
+				<target>Affiche les intéressées des pages suivantes:</target>
+			</trans-unit>
+			<trans-unit id="cp_hideaddress.label">
+				<source>hide Address</source>
+				<target>Cacher l&#39;adresse</target>
+			</trans-unit>
+			<trans-unit id="cp_hideemail.label">
+				<source>hide email</source>
+				<target>Cacher le email</target>
+			</trans-unit>
+			<trans-unit id="cp_hidefon.label">
+				<source>hide Fon</source>
+				<target>Cacher le téléphone</target>
+			</trans-unit>
+			<trans-unit id="description">
+				<source>List of New Teams</source>
+				<target>Liste desintéressées d&#39;une unité organisationnelle</target>
+			</trans-unit>
+			<trans-unit id="header.label">
+				<source>Board</source>
+				<target>Unité organisationelle</target>
+			</trans-unit>
+			<trans-unit id="members.label">
+				<source>Page with new Teams</source>
+				<target>Page avec les intéressées</target>
+			</trans-unit>
+			<trans-unit id="title">
+				<source>New Teams List</source>
+				<target>Liste des intéressées</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" original="EXT:kuhteammanagement/Resources/Private/Language/loacallang_db.xlf" datatype="plaintext" product-name="kuhteammanagement" date="2025-10-01T17:04:44+02:00">
+        <header></header>
+        <body>
+            <trans-unit id="pagetype.neuesteam.label" approved="yes">
+                <source>New Team</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

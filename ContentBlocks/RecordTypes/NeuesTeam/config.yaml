@@ -1,8 +1,8 @@
-name: conpassione/newteamenroll
+name: conpassione/neuesteam
 typeField: type
-typeName: kuhnewteamenroll
+typeName: neuesTeam
 title: 'Neues Team'
-table: tx_conpassione_newteamenroll
+table: tx_kuhteammanagement_neuesteam
 prefixFields: false
 languageAware: false
 labelField:

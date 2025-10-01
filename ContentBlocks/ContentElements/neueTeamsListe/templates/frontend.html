@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+>
+
+<f:asset.css href="{cb:assetPath()}/frontend.css" identifier="newteam-css"/>
+
+<div class="newteamlist" id="sl{data.uid}">
+    <f:cObject
+        data="{data}"
+        table="tt_content"
+        typoscriptObjectPath="tt_content.header"
+    />
+    <f:debug>{_all}</f:debug>
+    <div class="neueteamsliste">
+        <f:for as="neuesteam" each="{neueteamsliste}">
+            <div>{neuesteam.data.firstname}</div>
+            <div>{neuesteam.data.lastname}</div>
+            <div>{neuesteam.data.dog}</div>
+            <div>{neuesteam.data.mobile}</div>
+            <div>{neuesteam.data.email}</div>
+            <div>{neuesteam.data.breed}</div>
+            <div>{neuesteam.data.birthdate}</div>
+            <div>{neuesteam.data.message}</div>
+            <div>aufnehmen</div>
+            <div>löschen</div>
+        </f:for>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" original="" datatype="plaintext" date="2025-10-01T17:04:44+02:00">
+        <body>
+            <trans-unit id="pagetype.neuesteam.label">
+                <source>New Team</source>
+                <target>Neues Team</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

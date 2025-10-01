@@ -1,0 +1,13 @@
+# CType: neueTeamsListe
+# tt_content.neueTeamsListe < lib.contentElement ### don't do this for Content Blocks
+tt_content.neueteamsliste {
+  dataProcessing {
+    200 = database-query
+    200 {
+      table = tx_kuhteammanagement_neuesteam
+      orderBy = sorting
+      pidInList.data = field : members
+      as = neueteamsliste
+    }
+  }
+}
