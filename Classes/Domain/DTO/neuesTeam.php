@@ -1,10 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace Conpassione\kuhteammanagement\Domain\DTO;
 
-
-class NeuesTeam
+class neuesTeam
 {
+    protected integer $uid;
     protected string $lastname;
     protected string $firstname;
     protected string $mobile;
@@ -15,6 +16,7 @@ class NeuesTeam
     protected mixed $birthdate;
 
     public function __construct(
+        int $uid,
         string $lastname,
         string $firstname,
         string $mobile,
@@ -25,6 +27,7 @@ class NeuesTeam
         mixed $birthdate,
     )
     {
+        $this->uid = 0;
         $this->lastname = $lastname;
         $this->firstname = $firstname;
         $this->mobile = $mobile;
@@ -38,6 +41,7 @@ class NeuesTeam
     public static function createEmpty(): self
     {
         return new self(
+            0,
             '',
             '',
             '',
@@ -45,78 +49,131 @@ class NeuesTeam
             '',
             '',
             '',
-            null
+            '0'
         );
 
     }
 
-    function getLastName(): string
+    public function getUid(): int
+    {
+        return $this->uid;
+    }
+
+    /**
+     * @param int $uid
+     * @return void
+     */
+    public function setUid(int $uid): void
+    {
+        $this->uid = $uid;
+    }
+
+    public function getLastName(): string
     {
         return $this->lastname;
     }
 
-    function setLastname(string $lastname): void
+    /**
+     * @param string  $lastname
+     * @return void
+     */
+    public function setLastname(string $lastname): void
     {
         $this->lastname = $lastname;
     }
 
-    function getFirstName(): string
+    public function getFirstName(): string
     {
         return $this->firstname;
     }
 
-    function setFirstname(string $firstname): void
+    /**
+     * @param string  $firstname
+     * @return void
+     */
+    public function setFirstname(string $firstname): void
     {
         $this->firstname = $firstname;
     }
 
-    function getMobile(): string
+    public function getMobile(): string
     {
         return $this->mobile;
     }
-    function setMobile(string $mobile): void
+
+    /**
+     * @param string  $mobile
+     * @return void
+     */
+    public function setMobile(string $mobile): void
     {
         $this->mobile = $mobile;
     }
 
-    function getEmail(): string
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    function setEmail(string $email): void
+    /**
+     * @param string $email
+     * @return void
+     */
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
-    function getMessage(): string
+    public function getMessage(): string
     {
         return $this->message;
     }
-    function setMessage(string $message): void
+
+    /**
+     * @param string $message
+     * @return void
+     */
+    public function setMessage(string $message): void
     {
         $this->message = $message;
     }
-    function getDog(): string
+    public function getDog(): string
     {
         return $this->dog;
     }
-    function setDog(string $dog): void
+
+    /**
+     * @param string $dog
+     * @return void
+     */
+    public function setDog(string $dog): void
     {
         $this->dog = $dog;
     }
-    function getBreed(): string
+
+    public function getBreed(): string
     {
         return $this->breed;
     }
-    function setBreed(string $breed): void
+
+    /**
+     * @param string $breed
+     * @return void
+     */
+    public function setBreed(string $breed): void
     {
         $this->breed = $breed;
     }
-    function getBirthdate(): mixed
+
+    public function getBirthdate(): mixed
     {
         return $this->birthdate;
     }
-    function setBirthdate(mixed $birthdate): void
+
+    /**
+     * @param mixed $birthdate
+     * @return void
+     */
+    public function setBirthdate(mixed $birthdate): void
     {
         $this->birthdate = $birthdate;
     }

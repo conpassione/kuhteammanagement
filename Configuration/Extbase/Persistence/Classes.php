@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-// use
+use Conpassione\kuhteammanagement\Domain\DTO\neuesTeam;
 
 
 return [
-//  NewTeamEnroll::class => [
-//      'tableName' => 'tx_conpassione_newteamenroll',
-//  ]
+  neuesTeam::class => [
+      'tableName' => 'tx_kuhteammanagement_neuesteam',
+  ]
 ];
