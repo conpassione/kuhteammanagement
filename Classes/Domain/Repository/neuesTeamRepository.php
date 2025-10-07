@@ -3,17 +3,23 @@ declare(strict_types=1);
 
 namespace Conpassione\kuhteammanagement\Domain\Repository;
 
+use Doctrine\DBAL\Exception;
 use phpDocumentor\Reflection\Types\Integer;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
+use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-final class neuesTeamRepository
+class neuesTeamRepository
 {
     public function __construct(
         private readonly ConnectionPool $connectionPool,
     ) {}
 
+    /**
+     * @throws Exception
+     */
     public function findAllTeams(): array
     {
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_kuhteammanagement_neuesteam');
@@ -28,20 +34,24 @@ final class neuesTeamRepository
         return $teams;
     }
 
-    public function findTeamById(?Integer $teamID = null): array
+    public function findTeamById(?int $teamID = null): array
     {
+        if (is_null($teamID)) {
+            return [
+                ['firstname' => 'john doe']
+            ];
+        }
+
         $queryBuilder = $this->connectionPool->getQueryBuilderForTable('tx_kuhteammanagement_neuesteam');
+        $queryBuilder->setRestrictions(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
         $result = $queryBuilder
             ->select('*')
             ->from('tx_kuhteammanagement_neuesteam')
             ->where(
-                $queryBuilder->expr()->or (
-                    $queryBuilder->expr()->eq('deleted', 0),
-                $queryBuilder->expr()->eq('uid', $teamID)
-                )
+                    $queryBuilder->expr()->eq('uid', $teamID)
             )
             ->executeQuery();
-        $team[] = $result->fetchAllAssociative();
+        $team[] = $result->fetchAssociative();
         return $team;
     }
 }

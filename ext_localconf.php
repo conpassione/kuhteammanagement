@@ -2,9 +2,19 @@
 declare(strict_types=1);
 
 // use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use Conpassione\kuhteammanagement\Controller\TeamAufnahmeController;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
-//$GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths'][36651] = 'EXT:kuhteammanagement/Resources/Private/Emails/Layouts';
-//$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][36651] = 'EXT:kuhteammanagement/Resources/Private/Emails/Templates';
-//$GLOBALS['TYPO3_CONF_VARS']['MAIL']['partialRootPaths'][36651] = 'EXT:kuhteammanagement/Resources/Private/Emails/Partials';
+ExtensionUtility::configurePlugin(
+    // extension name, matching the PHP namespaces (but without the vendor)
+    'kuhteammanagement',
+    // arbitrary, but unique plugin name (not visible in the backend)
+    'TeamAufnahme',
+    // all actions
+    [TeamAufnahmeController::class => 'list, show, edit, delete'],
+    // non-cacheable actions
+    [TeamAufnahmeController::class => 'list, edit, delete'],
+    ExtensionUtility:: PLUGIN_TYPE_CONTENT_ELEMENT,
+);

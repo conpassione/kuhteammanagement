@@ -1,0 +1,12 @@
+lib.contentElement {
+  templateRootPaths {
+    36651 = EXT:kuhteammanagement/Resources/Private/ContentElements/Templates
+  }
+  layoutRootPaths {
+    36651 = EXT:kuhteammanagement/Resources/Private/ContentElements/Layouts
+  }
+  partialRootPaths {
+    36651 = EXT:kuhteammanagement/Resources/Private/ContentElements/Partials
+  }
+}
+

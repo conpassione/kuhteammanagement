@@ -4,10 +4,5 @@ services:
     autoconfigure: true
     public: false
 
-  Conpassione\Kuhdist\:
+  Conpassione\kuhteammanagement\:
     resource: '../Classes/*'
-
-  Conpassione\Kuhdist\EventListener\TcaToRteConfiguration:
-    tags:
-      - name: 'event.listener'
-        event: 'TYPO3\CMS\RteCKEditor\Form\Element\Event\AfterPrepareConfigurationForEditorEvent'

@@ -5,7 +5,7 @@ namespace Conpassione\kuhteammanagement\Domain\DTO;
 
 class neuesTeam
 {
-    protected integer $uid;
+    protected int $uid;
     protected string $lastname;
     protected string $firstname;
     protected string $mobile;
