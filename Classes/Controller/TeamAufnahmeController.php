@@ -19,13 +19,11 @@ class TeamAufnahmeController extends ActionController
     public function listAction(): ResponseInterface
     {
         $teams = $this->neuesTeamRepository->findAllTeams();
-        $message = "Das ist ein Test: mit allen Teams";
-        $this->view->assign('message', $message);
         $this->view->assign('teams', $teams);
         return $this->htmlResponse();
     }
 
-    public function showAction(?int $teamID = null): ResponseInterface
+    public function neuesteamAction(?int $teamID = null): ResponseInterface
     {
         if (is_null($teamID)) {
             $message = "Das ist ein Test: leere teamID";
@@ -37,5 +35,16 @@ class TeamAufnahmeController extends ActionController
             $this->view->assign('neuesTeam', $neuesTeam);
         }
         return $this->htmlResponse();
+    }
+
+    public function deleteAction(?int $teamID = null): ResponseInterface
+    {
+        if (is_null($teamID)) {
+            $teamID = 0;
+        }
+        $effectedRows = $this->neuesTeamRepository->deleteTeamById($teamID);
+
+        return $this->redirect('list');
+
     }
 }

@@ -29,13 +29,13 @@ finishers:
       templateName: 'NewTeamR.html'
   - identifier: SaveToDatabase
     options:
-      table: 'tx_conpassione_newteamenroll'
+      table: 'tx_kuhteammanagement_neuesteam'
       mode: insert
       databaseColumnMappings:
         tstamp:
           value: '{__currentTimestamp}'
         pid:
-#          value: '{eventpid}'
+          # value: '{eventpid}'
           value: '10'
         type:
           value: 'kuhnewteamenroll'

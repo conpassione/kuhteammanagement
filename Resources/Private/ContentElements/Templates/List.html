@@ -1,10 +1,19 @@
 <html data-namespace-typo3-fluid="true"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-
-<f:layout name="Teamsdefault" />
+<f:layout name="TeamAufnahmeLayout" />
 <f:section name="Main">
-    <f:debug>{_all}</f:debug>
-    <p>Das ist das LIST KuH TeamManagement Plugin.</p>
-    <p>XX{message}XX</p>
+    <f:if condition="{teams}">
+        <f:then>
+            <f:for each="{teams}" as="team">
+                <div class="teamlist">
+                    <div>{team.lastname} {team.firstname}</div>
+                    <div>{team.dog}</div>
+                    <div><f:link.action action="neuesteam" arguments="{teamID: team.uid}">Aufnehmen</f:link.action></div>
+                    <div><f:link.action action="delete" arguments="{teamID: team.uid}">Löschen</f:link.action></div>
+                </div>
+            </f:for>
+        </f:then>
+        <f:else>Keine neue Teams gefunden</f:else>
+    </f:if>
 </f:section>

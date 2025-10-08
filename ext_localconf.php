@@ -13,8 +13,8 @@ ExtensionUtility::configurePlugin(
     // arbitrary, but unique plugin name (not visible in the backend)
     'TeamAufnahme',
     // all actions
-    [TeamAufnahmeController::class => 'list, show, edit, delete'],
+    [TeamAufnahmeController::class => 'list, neuesteam, delete'],
     // non-cacheable actions
-    [TeamAufnahmeController::class => 'list, edit, delete'],
+    [TeamAufnahmeController::class => 'list, neuesteam, delete'],
     ExtensionUtility:: PLUGIN_TYPE_CONTENT_ELEMENT,
 );
