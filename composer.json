@@ -54,6 +54,11 @@
 			}
 		}
 	],
+	"scripts": {
+		"post-autoload-dump": [
+			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironement::prepare"
+		]
+	},
 	"extra": {
 		"branch-alias": {
 			"dev-main": "1.0.x-dev"
