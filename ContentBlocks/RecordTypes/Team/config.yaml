@@ -1,0 +1,36 @@
+name: conpassione/team
+typeName: team
+title: 'Team'
+table: tx_kuhteammanagement_team
+prefixFields: false
+languageAware: false
+labelField:
+  - teamname
+sortField:
+  - identifier: teamname
+    order: asc
+security:
+  ignorePageTypeRestriction: true
+
+fields:
+  - identifier: teamname
+    type: Text
+    label: 'Teamname'
+    required: true
+  - identifier: person
+    type: Select
+    label: 'Person'
+    renderType: selectSingle
+    minitems: 1
+    maxitems: 1
+    foreign_table: fe_users
+    # foreign_table_where: 'AND fe_users.status != 0'
+  - identifier: hund
+    type: Select
+    label: 'Hund'
+    renderType: selectSingle
+    minitems: 1
+    maxitems: 1
+    foreign_table: tx_kuhteammanagement_dog
+    # foreign_table_where: 'AND fe_users.status != 0'
+    foreign_table_orderby: 'dogname ASC, birthdate ASC'

@@ -1,0 +1,27 @@
+name: conpassione/dog
+typeName: dog
+title: 'Dog'
+table: tx_kuhteammanagement_dog
+prefixFields: false
+languageAware: false
+labelField:
+  - dogname
+  - birthdate
+sortField:
+  - identifier: dogname
+    order: asc
+security:
+  ignorePageTypeRestriction: true
+
+fields:
+  - identifier: dogname
+    type: Text
+  - identifier: legend
+    type: Textarea
+    rows: 6
+    enableRichtext: true
+  - identifier: breed
+    type: Text
+  - identifier: birthdate
+    type: DateTime
+    format: date
