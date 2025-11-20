@@ -18,3 +18,7 @@ ExtensionUtility::configurePlugin(
     [TeamAufnahmeController::class => 'list, neuesteam, delete'],
     ExtensionUtility:: PLUGIN_TYPE_CONTENT_ELEMENT,
 );
+
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['layoutRootPaths'][366510] = 'EXT:kuhteammanagement/Resources/Private/Emails/Layouts/';
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['templateRootPaths'][366510] = 'EXT:kuhteammanagement/Resources/Private/Emails/Templates/';
+$GLOBALS['TYPO3_CONF_VARS']['MAIL']['partialRootPaths'][366510] = 'EXT:kuhteammanagement/Resources/Private/Emails/Partials/';

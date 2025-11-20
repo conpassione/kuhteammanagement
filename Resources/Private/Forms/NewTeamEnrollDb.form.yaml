@@ -139,7 +139,7 @@ renderables:
         label: 'Mitteilung'
       - type: Checkbox
         identifier: confirmation
-        label: 'Ich bin einverstanden, dass die für die Kontaktaufnahme mit mir werden.'
+        label: 'Ich bin einverstanden, dass die Daten für die Kontaktaufnahme mit mir verwendet werden.'
         properties:
           elementDescription: ''
           fluidAdditionalAttributes:
